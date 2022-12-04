@@ -17,9 +17,9 @@ def getScore(advPlay: Play, ownPlay: Play): Int =
   val winScore = (scoreMap(advPlay), scoreMap(ownPlay)) match
     case (1, 3) => 0
     case (3, 1) => 6
+    case (a, b) if a > b => 0
     case (a, b) if a == b => 3
     case (a, b) if a < b => 6
-    case (a, b) if a > b => 0
   winScore + scoreMap(ownPlay)
 
 def getTotalScore1(plays: Array[(String, String)]): Int =
